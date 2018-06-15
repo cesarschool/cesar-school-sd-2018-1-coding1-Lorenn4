@@ -11,11 +11,25 @@
  * Output: true se a sentença é um palídromo, falso caso negativo.
  */
 
-bool isPalindrome (char sentence[], int length) {
+bool isPalindrome (char sentence [], int length) {
+    
     printf("\nisPalindrome::START: %s, %d\n", sentence, length);
 
     // TODO: YOUR CODE HERE!
     
+    int num1 = 0;
+    int num2 = length - 1;
+    
+    while (sentence [num1] == sentence [num2]) {
+        if (num1 == num2 || num1 > num2) {
+            printf ("True");
+            printf("\nisPalindrome::END\n");
+            return true;
+        }
+        num1 = num1 + 1;
+        num2 = num2 - 1;
+    }
+    printf ("Falso");
     printf("\nisPalindrome::END\n");
     return false;
 }
@@ -34,4 +48,3 @@ int main()
 
     return 0;
 }
- 
