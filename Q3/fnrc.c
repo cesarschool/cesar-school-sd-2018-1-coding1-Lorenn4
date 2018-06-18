@@ -23,21 +23,32 @@ void firstNonRepeatingChar (char sentence [], int length) {
     
     while (letra <= final) {
         leitura = 0;
+        
         while (leitura <= final) {
-            if ((sentence[leitura] == sentence[letra]) && leitura != letra) {
+          
+          if (sentence [letra] == ' ') {
                 sinal = 0;
                 break;
             }
+          
+          else if ((sentence[leitura] == sentence[letra]) && leitura != letra) {
+                sinal = 0;
+                break;
+            }
+          
             sinal = 1;
             leitura = leitura + 1;
         }
+        
         if (sinal == 1) {
             printf ("%c", sentence[letra]);
             printf("\nfirstNonRepeatingChar::END\n");
             return sentence[letra];
         }
+       
         letra = letra + 1;
     }
+    
     printf ("-1");
     printf("\nfirstNonRepeatingChar::END\n");
     return -1;
